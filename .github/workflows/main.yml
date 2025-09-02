@@ -1,51 +1,31 @@
-name: Profile Goodies 🐍✨
+name: Generate Snake Animation 🐍
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
   workflow_dispatch:
 
 permissions:
-  contents: write   # ✅ allow pushing changes
+  contents: write   # ✅ required for pushing to repo
 
 jobs:
-  snake-and-quote:
+  generate-snake:
     runs-on: ubuntu-latest
     steps:
+      # Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Snake Animation
+      # Generate Snake Animation
       - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
-          github_user_name: AbhijeetRaj646
+          github_user_name: AbhijeetRaj646   # 👈 change to your username
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # Daily Quote
-      - name: Fetch Random Quote
-        run: |
-          curl -s https://api.quotable.io/random | jq -r '.content' > quote.txt
-
-      - name: Update README with Quote
-        run: |
-          QUOTE=$(cat quote.txt)
-          sed -i "s|<!--QUOTE-->|$QUOTE|" README.md
-
-      # Commit & Push changes
-      - name: Commit and Push changes
-        run: |
-          git config user.name 'github-actions'
-          git config user.email 'actions@github.com'
-          git add README.md quote.txt dist/
-          git commit -m "chore: update snake & daily quote" || echo "No changes to commit"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Deploy Snake Animation to GitHub Pages
+      # Push generated snake files to GitHub Pages branch
       - name: Push Snake SVGs to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
