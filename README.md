@@ -56,7 +56,7 @@ Email me at: [abhijeetraj646@gmail.com](mailto:abhijeetraj646@gmail.com)
 
 
 ### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=jaiswaladi246&limit=5&theme=flat&combine_all_yearly_contributions=true)
+![](https://github-contributor-stats.vercel.app/api?username=AbhijeetRaj646&limit=5&theme=flat&combine_all_yearly_contributions=true)
 
 ---
 
