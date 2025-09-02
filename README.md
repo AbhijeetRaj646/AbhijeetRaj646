@@ -62,7 +62,7 @@ Email me at: [abhijeetraj646@gmail.com](mailto:abhijeetraj646@gmail.com)
 
 [![](https://visitcount.itsvg.in/api?id=AbhijeetRaj646&icon=0&color=0)](https://visitcount.itsvg.in)
 
-### 🐍 Contribution Snake
+### 🌱 My GitHub Journey 
 ![Snake animation](https://raw.githubusercontent.com/AbhijeetRaj646/AbhijeetRaj646/output/github-contribution-grid-snake.svg)
 
 
